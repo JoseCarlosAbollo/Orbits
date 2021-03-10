@@ -1,22 +1,13 @@
-/*************************************************************************************************
-This code draws a grid with some uniform circular motions (UCMs) in its first row (increasing 
-angular speed to the right) and its first column (increasing angular speed to the bottom).
-The grid then is filled with patterns originated from taking the same x axis for each cell in a 
-column and the same y axis for each cell in a row.
-
-Author: Abollo Palacios, José Carlos.
-Date: 09/03/2021
-*************************************************************************************************/
-var numCells = 10;					// Number of cells
-var cellSize = 100;					// Size of a cell
+var numCells = 10;			// Number of cells
+var cellSize = 100;			// Size of a cell
 var cellCenter = cellSize/2.0;		// Half that size (used to center UCMs)
 var imgSize = numCells * cellSize;	// Size of the image
 
 var colourOffset = 250.0/numCells;	// Setting the contrast to increase/decrease
 
-var radius = 0.45 * cellSize;
-var phi = 0;
-var w = 0.5;
+var radius = 0.45 * cellSize;		// Radius of the orbits
+var phi = 0;				// Angle from the actual point to the center
+var w = 0.5;				// Angular velocity
 
 function setup(){
 	let img = createImage(imgSize, imgSize);
